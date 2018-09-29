@@ -17,7 +17,8 @@ namespace Lesson_1
             Game.Init(form);
             form.Show();
             Game.Draw();
-            Application.Run(form);
+            Application.Run(form);
+
         }
     }
 }
