@@ -17,6 +17,7 @@ namespace Lesson_1
             Pos = pos;
             Dir = dir;
             Size = size;
+
         }
         public virtual void Draw()
         {
@@ -28,10 +29,9 @@ namespace Lesson_1
             Pos.X = Pos.X + Dir.X;
             Pos.Y = Pos.Y + Dir.Y;
             if (Pos.X < 0) Dir.X = -Dir.X;
-            if (Pos.X > Game.Width) Dir.X = -Dir.X;
+            if (Pos.X + Size.Width > Game.Width) Dir.X = -Dir.X;
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
+            if (Pos.Y+Size.Height > Game.Height) Dir.Y = -Dir.Y;
         }
-
     }
 }

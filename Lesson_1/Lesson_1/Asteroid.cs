@@ -40,7 +40,7 @@ namespace Lesson_1
         /// </summary>
        private static Image AddAsteroid()
         {
-            Image i= Image.FromFile($"0{random.Next(1, 4)}.png");
+            Image i= Image.FromFile($"0{random.Next(1, 5)}.png");
             return i;
         }
     }

@@ -9,23 +9,24 @@ namespace Lesson_1
 {
     class Star : BaseObject
     {
-        
+        private Bitmap star;
 
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
+            star = new Bitmap(Image.FromFile("star.png"), size);
         }
 
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
-            Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
+            Game.Buffer.Graphics.DrawImage(star, Pos);
         }
 
         public override void Update()
         {
-            Pos.X = Pos.X - Dir.X;
-            if (Pos.X < 0) Pos.X = Game.Width + Size.Width;
+            Pos.Y = Pos.Y + Dir.Y;
+            if (Pos.Y > Game.Height) Pos.Y = 0;
         }
+
        
     }
 }
